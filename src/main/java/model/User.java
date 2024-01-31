@@ -8,11 +8,11 @@ import lombok.Data;
 @Table(name = "users", schema = "new_schema1")
 public class User {
 
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String name;
 
     @Column(nullable = false)
